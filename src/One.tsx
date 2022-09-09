@@ -2,17 +2,17 @@ import React, { useEffect } from 'react';
 // import {useParams} from 'react-router-dom';
 // import { useState } from 'react';
 
-console.log("test")
+
 
 const One = () => {
-  const screenType='subs';
+  const screenType='subsj';
   // const [storyContent,setStoryContent]=useState("");
   const API_URL='https://stage.tsbdev.co/api/v1';
   const clientId="5f92a62013332e0f667794dc";
   const storyId="Client-Story-Id-4"
   // let value = true;
 
-    const initializePaywall = async() => {
+    const initializePaywall =  async() => {
       console.log('---------------------------------')
         let storyTitle: string = '';
         let storySubTitle: string = '';
@@ -140,7 +140,12 @@ const One = () => {
       // },[])
 
       useEffect(()=>{
+
+        // setTimeout(()=>{
+        //   initializePaywall()
+        // },10000)
         initializePaywall()
+       
       })
       
     

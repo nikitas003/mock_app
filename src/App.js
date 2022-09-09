@@ -52,12 +52,13 @@ function App() {
     <div className="App">
      
       <div >
-        <Router>
+        {/* <Router>
             <Routes>
               <Route exact path="/" element={<Client/>}></Route>
               <Route exact path="/one/:id" element={<One/>}></Route> 
             </Routes>
-        </Router>
+        </Router> */}
+        <One/>
       </div>
       
     </div>
