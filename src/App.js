@@ -3,10 +3,12 @@ import One from './One.tsx';
 import ReactDOM from 'react-dom';  
 import { Route,Routes, BrowserRouter as Router } from 'react-router-dom';  
 import Client from './Client.tsx';
+import { useEffect } from 'react';
 
 
 let scriptElement = null;
 function App() {
+  let number = "5f92a62013332e0f667794dc"
   function initializeScript(clientId) {
     window._csc('show');
     // @ts-ignore
@@ -42,10 +44,14 @@ function App() {
     })(window, document, 'script', '_csc', 'https://csc-sdk.netlify.app/', clientId);
   }
   
+  useEffect(()=>{
+    initializeScript("5f92a62013332e0f667794dc")
+  },[])
+
   return (
     <div className="App">
      
-      <div onClick={()=>initializeScript("5f92a62013332e0f667794dc")}>
+      <div >
         <Router>
             <Routes>
               <Route exact path="/" element={<Client/>}></Route>
